@@ -1,0 +1,61 @@
+* {
+  /* outline: 1px solid red; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  background-color: #2d2d2d;
+}
+
+body {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1em;
+}
+
+.paginator-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  /* font-size: 1em; */
+}
+
+.paginator-container {
+  /* font-size: 2rem; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  justify-content: center;
+}
+
+.paginator-container :is(.left, .center, .right) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2em;
+}
+
+.paginator-container button {
+  min-width: 3em;
+  min-height: 2em;
+  cursor: pointer;
+  padding: 0.5em;
+  border-color: transparent;
+  border-style: solid;
+  transform-origin: bottom center;
+  transition: 0.05s ease-in-out;
+  font-weight: 600;
+}
+
+.paginator-container button:active {
+  transform: scaleY(0.9);
+}
+
+.paginator-container .center {
+  justify-content: center;
+}
+
+.paginator-container .center .active {
+  text-decoration: underline;
+  border-color: red;
+}
