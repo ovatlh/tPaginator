@@ -1,8 +1,0 @@
-pre, .console-log {
-  color: #ffffff;
-}
-
-.log {
-  max-height: 15rem;
-  overflow-y: scroll;
-}

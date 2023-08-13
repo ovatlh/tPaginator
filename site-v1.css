@@ -1,8 +1,71 @@
-h3, pre, .console-log {
+* {
+  /* outline: 1px solid red; */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+  background-color: #1e1e1e;
   color: #ffffff;
 }
 
-.log {
-  max-height: 15rem;
+body {
+  display: grid;
+  gap: 1em;
+  grid-auto-flow: row;
+}
+
+#console-log-id {
+  min-height: 12em;
+  max-height: 12em;
   overflow-y: scroll;
+  font-size: 0.8em;
+  padding: 1em;
+  font-family: monospace;
+}
+
+.bg-black-01 {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0.1em solid rgba(255, 255, 255, 0.1);
+}
+
+pre {
+  padding: 1em;
+  overflow-x: auto;
+  font-family: monospace;
+}
+
+br {
+  border-bottom: 0.1em solid #ffffff;
+  width: 100%;
+  height: 1em;
+}
+
+#paginator-test-2 {
+  justify-content: start;
+}
+
+#paginator-test-3 {
+  justify-content: end;
+}
+
+#paginator-test-4 {
+  font-size: 4em;
+}
+
+#paginator-test-5 button {
+  display: grid;
+  align-content: center;
+  height: 6em;
+}
+
+#paginator-test-6 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: auto 1fr auto;
+}
+
+#paginator-test-6 .center {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
 }

@@ -1,7 +1,7 @@
 const CONSOLE_LOG_ID_DOM = document.getElementById("console-log-id");
 
-function testFnOnButtonClick(numPage, totalPages, id) {
-  const log = `<p>numPage: ${numPage}/${totalPages}, id: ${id}, date: ${new Date()}</p>`;
+function testFnOnButtonClick(numPage, id) {
+  const log = `<p>numPage: ${numPage}, id: ${id}, date: ${new Date()}</p>`;
   
   const logDOM = CONSOLE_LOG_ID_DOM.querySelector(".log");
   const p = document.createElement("p");
@@ -10,66 +10,80 @@ function testFnOnButtonClick(numPage, totalPages, id) {
   logDOM.insertBefore(p, logDOM.firstChild);
 }
 
-
-tPaginator.fnInitPaginator({
+tPaginator.fnInit({
   id: "paginator-test-1",
-  totalItemsCount: 500000,
-  pageSize: 100,
+  totalPages: 300,
   currentPage: 1,
-  numPagesToShow: 7,
-  fnOnButtonClick: testFnOnButtonClick,
+  numPagesToShow: 5,
+  fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInitPaginator({
+tPaginator.fnInit({
   id: "paginator-test-2",
-  totalItemsCount: 145300,
-  pageSize: 25,
+  totalPages: 10,
   currentPage: 1,
-  numPagesToShow: 13,
-  textButtons: {
+  numPagesToShow: 9,
+  buttonTexts: {
     FIRST: "Inicio",
-    PREVIOUS: "Anterior",
+    PREV: "Anterior",
     NEXT: "Siguiente",
-    LAST: "Última",
+    LAST: "Final",
   },
-  fnOnButtonClick: testFnOnButtonClick,
+  fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInitPaginator({
+tPaginator.fnInit({
   id: "paginator-test-3",
-  totalItemsCount: 145300,
-  pageSize: 3000,
-  currentPage: 47,
+  totalPages: 5000,
+  currentPage: 1,
   numPagesToShow: 9,
-  textButtons: {
+  buttonTexts: {
     FIRST: "«",
-    PREVIOUS: "‹",
+    PREV: "‹",
     NEXT: "›",
     LAST: "»",
   },
-  fnOnButtonClick: testFnOnButtonClick,
+  fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInitPaginator({
+tPaginator.fnInit({
   id: "paginator-test-4",
-  totalItemsCount: 10,
-  pageSize: 10,
+  totalPages: 100,
   currentPage: 1,
   numPagesToShow: 3,
-  fnOnButtonClick: testFnOnButtonClick,
+  buttonTexts:{
+    FIRST: "😺",
+    PREV: "🐶",
+    NEXT: "🐵",
+    LAST: "🐹",
+  },
+  fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInitPaginator({
+tPaginator.fnInit({
   id: "paginator-test-5",
-  totalItemsCount: 300,
-  pageSize: 10,
+  totalPages: 10,
   currentPage: 1,
-  numPagesToShow: 5,
-  textButtons: {
-    FIRST: "Ini<strong>ci</strong>o",
-    PREVIOUS: "⬅",
-    NEXT: "😉",
-    LAST: "La<strong>s</strong>t 😎",
+  numPagesToShow: 1,
+  buttonTexts:{
+    FIRST: "First 🙂",
+    PREV: "Atras",
+    NEXT: "Sig",
+    LAST: "Ú<strong>lti</strong>ma",
   },
-  fnOnButtonClick: testFnOnButtonClick,
+  fnOnClick: testFnOnButtonClick,
+});
+
+tPaginator.fnInit({
+  id: "paginator-test-6",
+  totalPages: 5,
+  currentPage: 1,
+  numPagesToShow: 13,
+  buttonTexts:{
+    FIRST: "First 🙂",
+    PREV: "Atras",
+    NEXT: "Siguiente",
+    LAST: "Ú<strong>lti</strong>ma",
+  },
+  fnOnClick: testFnOnButtonClick,
 });
