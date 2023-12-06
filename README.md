@@ -1,3 +1,3 @@
-# tPaginator
+# tpaginator
 
-https://ovatlh.github.io/tPaginator/
+https://ovatlh.github.io/tpaginator/
