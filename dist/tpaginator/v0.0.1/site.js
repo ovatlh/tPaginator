@@ -10,7 +10,7 @@ function testFnOnButtonClick(numPage, id) {
   logDOM.insertBefore(p, logDOM.firstChild);
 }
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-1",
   totalPages: 300,
   currentPage: 1,
@@ -18,7 +18,7 @@ tPaginator.fnInit({
   fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-2",
   totalPages: 10,
   currentPage: 1,
@@ -32,7 +32,7 @@ tPaginator.fnInit({
   fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-3",
   totalPages: 5000,
   currentPage: 1,
@@ -46,7 +46,7 @@ tPaginator.fnInit({
   fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-4",
   totalPages: 100,
   currentPage: 1,
@@ -60,7 +60,7 @@ tPaginator.fnInit({
   fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-5",
   totalPages: 10,
   currentPage: 1,
@@ -74,7 +74,7 @@ tPaginator.fnInit({
   fnOnClick: testFnOnButtonClick,
 });
 
-tPaginator.fnInit({
+tpaginator.fnInit({
   id: "paginator-test-6",
   totalPages: 5,
   currentPage: 1,

@@ -1,5 +1,5 @@
-var tPaginator=tPaginator||(function () {
-  const VERSION = "1.0.0";
+var tpaginator=tpaginator||(function () {
+  const VERSION = "0.0.1";
   let PAGINATOR = {};
 
   function fnRefresh({
@@ -95,10 +95,10 @@ var tPaginator=tPaginator||(function () {
       const resNumPage = dataSet.numPage;
       const numPage = parseInt(resNumPage);
 
-      tPaginator.fnSetNewPage({ id: paginator_ID, numPage: numPage });
+      tpaginator.fnSetNewPage({ id: paginator_ID, numPage: numPage });
 
-      if(tPaginator.PAGINATOR[paginator_ID].fnOnClick) {
-        tPaginator.PAGINATOR[paginator_ID].fnOnClick(numPage, paginator_ID);
+      if(tpaginator.PAGINATOR[paginator_ID].fnOnClick) {
+        tpaginator.PAGINATOR[paginator_ID].fnOnClick(numPage, paginator_ID);
       }
     } catch (e) {
       console.log({ error: `fnBtnOnClick`, e });
@@ -257,7 +257,7 @@ var tPaginator=tPaginator||(function () {
       const btn_LIST = paginator_DOM.querySelectorAll("button");
       btn_LIST.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-          tPaginator.fnBtnOnClick(e);
+          tpaginator.fnBtnOnClick(e);
         });
       })
     } catch (e) {
