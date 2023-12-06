@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tpaginator - v0.0.1</title>
+
+  <link rel="stylesheet" href="tpaginator.css">
+  <link rel="stylesheet" href="site.css">
+
+  <script src="tpaginator.js" defer></script>
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <div class="paginator-container" id="paginator-test-1">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="paginator-container" id="paginator-test-2">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="paginator-container" id="paginator-test-3">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="paginator-container" id="paginator-test-4">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="paginator-container" id="paginator-test-5">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <br>
+  
+  <div class="paginator-container" id="paginator-test-6">
+    <div class="left">
+      <button>First</button>
+      <button>Prev</button>
+    </div>
+
+    <div class="center">
+      <button>1</button>
+    </div>
+
+    <div class="right">
+      <button>Next</button>
+      <button>Last</button>
+    </div>
+  </div>
+
+  <h2>log</h2>
+  <div class="bg-black-01" id="console-log-id">
+    <div class="log"></div>
+  </div>
+
+  <h2>code</h2>
+  <pre class="bg-black-01">
+tpaginator.fnInit({
+  id: "paginator-test-1",
+  totalPages: 300,
+  currentPage: 1,
+  numPagesToShow: 5,
+  fnOnClick: testFnOnButtonClick,
+});
+
+tpaginator.fnInit({
+  id: "paginator-test-2",
+  totalPages: 10,
+  currentPage: 1,
+  numPagesToShow: 9,
+  buttonTexts: {
+    FIRST: "Inicio",
+    PREV: "Anterior",
+    NEXT: "Siguiente",
+    LAST: "Final",
+  },
+  fnOnClick: testFnOnButtonClick,
+});
+
+tpaginator.fnInit({
+  id: "paginator-test-3",
+  totalPages: 5000,
+  currentPage: 1,
+  numPagesToShow: 9,
+  buttonTexts: {
+    FIRST: "«",
+    PREV: "‹",
+    NEXT: "›",
+    LAST: "»",
+  },
+  fnOnClick: testFnOnButtonClick,
+});
+
+tpaginator.fnInit({
+  id: "paginator-test-4",
+  totalPages: 100,
+  currentPage: 1,
+  numPagesToShow: 3,
+  buttonTexts:{
+    FIRST: "😺",
+    PREV: "🐶",
+    NEXT: "🐵",
+    LAST: "🐹",
+  },
+  fnOnClick: testFnOnButtonClick,
+});
+
+tpaginator.fnInit({
+  id: "paginator-test-5",
+  totalPages: 10,
+  currentPage: 1,
+  numPagesToShow: 1,
+  buttonTexts:{
+    FIRST: "First 🙂",
+    PREV: "Atras",
+    NEXT: "Sig",
+    LAST: "Ú<strong>lti</strong>ma",
+  },
+  fnOnClick: testFnOnButtonClick,
+});
+
+tpaginator.fnInit({
+  id: "paginator-test-6",
+  totalPages: 5,
+  currentPage: 1,
+  numPagesToShow: 13,
+  buttonTexts:{
+    FIRST: "First 🙂",
+    PREV: "Atras",
+    NEXT: "Siguiente",
+    LAST: "Ú<strong>lti</strong>ma",
+  },
+  fnOnClick: testFnOnButtonClick,
+});
+  </pre>
+</body>
+</html>
