@@ -1,7 +1,7 @@
 {
     "name": "tpaginator",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "description": "pagination toolbar library",
-    "main": "dist/v0.0.3/tpaginator.js",
+    "main": "dist/v0.1.0/tpaginator.js",
     "author": "@ovatlh"
 }
