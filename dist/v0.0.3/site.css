@@ -1,0 +1,33 @@
+/* * {
+  outline: 1px solid red;
+} */
+
+html {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+body {
+  display: grid;
+  grid-auto-flow: row;
+  align-content: start;
+  /* display: flex; */
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+#log {
+  max-height: 10em;
+  overflow-y: scroll;
+  display: grid;
+  gap: 0.5em;
+  padding: 0.5em;
+  grid-auto-flow: row;
+}

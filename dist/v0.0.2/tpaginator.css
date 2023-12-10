@@ -1,0 +1,61 @@
+.tpaginator *,
+.tpaginator {
+  margin: 0;
+  padding: 0;
+}
+
+.tpaginator {
+  --_gap: 0.8em;
+  --_btn-padding: 0.4em 1em;
+  --_btn-border-style: solid;
+  --_btn-cursor: pointer;
+  --_btn-border-width: 0.2em;
+  --_btn-background-color: #f2f2f2;
+  --_btn-background-color-active: #ffb3b3;
+  --_btn-border-color: #b3b3b3;
+  --_btn-border-color-active: #ff0000;
+  --_btn-scale-y: 0.9;
+  --_btn-transition-duration: 0.05s;
+  --_btn-transition-function: ease-in-out;
+  --_btn-transform-origin: bottom center;
+}
+
+.tpaginator,
+.tpaginator .left,
+.tpaginator .center,
+.tpaginator .right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--_gap);
+}
+
+.tpaginator .btn {
+  padding: var(--_btn-padding);
+  cursor: var(--_btn-cursor);
+  background-color: var(--_btn-background-color);
+  border-style: var(--_btn-border-style);
+  border-width: var(--_btn-border-width);
+  border-color: var(--_btn-border-color);
+  transition: var(--_btn-transition-duration) var(--_btn-transition-function);
+  transform-origin: var(--_btn-transform-origin);
+}
+
+.tpaginator .btn.active {
+  border-color: var(--_btn-border-color-active);
+  background-color: var(--_btn-background-color-active);
+}
+
+.tpaginator .btn:active {
+  transform: scaleY(var(--_btn-scale-y));
+}
+
+.tpaginator .btn.hidden {
+  display: none;
+}
+
+.tpaginator .btn * {
+  user-select: none;
+  pointer-events: none;
+  touch-action: none;
+}

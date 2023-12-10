@@ -1,0 +1,22 @@
+* {
+  /* outline: 1px solid red; */
+}
+
+html {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+body {
+  display: grid;
+  grid-auto-flow: row;
+  align-content: start;
+  gap: 1em;
+  margin: 0;
+  padding: 1em;
+  box-sizing: border-box;
+}
