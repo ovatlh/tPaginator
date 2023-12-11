@@ -1,7 +1,7 @@
 var tpaginator=tpaginator||(function () {
   const _PAGINATOR = {};
   let _show_Error_Message = true;
-  let _show_Debug_Message = true;
+  let _show_Debug_Message = false;
 
   function fnArrayRange({
     start = 1,

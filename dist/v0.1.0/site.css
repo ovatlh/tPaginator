@@ -205,12 +205,12 @@ a::before {
 }
 .tpaginator.style-09 .btn.active {
   --_btn-border-color-active: gray;
-  background-image: linear-gradient(180deg, rgba(230,230,230,0.2) 0%, rgba(0,0,0,0.2) 100%) !important;
+  background-image: linear-gradient(180deg, rgba(230,230,230,0.2) 0%, rgba(0,0,0,0.2) 100%);
   box-shadow: inset 0 0 3px #111;
 }
 .tpaginator.style-09 .btn:hover {
   --_btn-border-color: #111111;
-  background-image: linear-gradient(180deg, rgba(88,88,88,1) 0%, rgba(17,17,17,1) 100%) !important;
+  background-image: linear-gradient(180deg, rgba(88,88,88,1) 0%, rgba(17,17,17,1) 100%);
   color: white;
   box-shadow: inset 0 0 3px #111;
 }

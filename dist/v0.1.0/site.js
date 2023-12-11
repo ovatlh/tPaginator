@@ -5,12 +5,9 @@ function fnTest(numPage, id) {
   log_DOM.insertBefore(_span, log_DOM.firstChild);
 }
 
-tpaginator.fnConfig({
-  showDebugMessage: false,
-});
+//tpaginator.fnConfig({ showDebugMessage: true });
 
-tpaginator.fnClear({ isAll: false });
-
+//tpaginator.fnClear({ isAll: true });
 
 tpaginator.fnInit({
   id: "tpaginator-id-1",
