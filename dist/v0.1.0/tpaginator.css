@@ -1,10 +1,10 @@
-.tpaginator *,
-.tpaginator {
+.t-paginator-container *,
+.t-paginator-container {
   margin: 0;
   padding: 0;
 }
 
-.tpaginator {
+.t-paginator-container {
   --_gap: 0.8em;
   --_btn-padding: 0.4em 1em;
   --_btn-border-style: solid;
@@ -20,17 +20,17 @@
   --_btn-transform-origin: bottom center;
 }
 
-.tpaginator,
-.tpaginator .left,
-.tpaginator .center,
-.tpaginator .right {
+.t-paginator-container,
+.t-paginator-container .left,
+.t-paginator-container .center,
+.t-paginator-container .right {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--_gap);
 }
 
-.tpaginator .btn {
+.t-paginator-container .btn {
   padding: var(--_btn-padding);
   cursor: var(--_btn-cursor);
   background-color: var(--_btn-background-color);
@@ -41,20 +41,20 @@
   transform-origin: var(--_btn-transform-origin);
 }
 
-.tpaginator .btn.active {
+.t-paginator-container .btn.active {
   border-color: var(--_btn-border-color-active);
   background-color: var(--_btn-background-color-active);
 }
 
-.tpaginator .btn:active {
+.t-paginator-container .btn:active {
   transform: scaleY(var(--_btn-scale-y));
 }
 
-.tpaginator .hidden {
+.t-paginator-container .hidden {
   display: none;
 }
 
-.tpaginator .btn * {
+.t-paginator-container .btn * {
   user-select: none;
   pointer-events: none;
   touch-action: none;

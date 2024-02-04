@@ -1,7 +1,3 @@
-/* * {
-  outline: 1px solid red;
-} */
-
 html {
   background-color: hsl(0, 0%, 80%);
   color: #1e1e1e;
@@ -15,7 +11,6 @@ body {
   display: grid;
   grid-auto-flow: row;
   align-content: start;
-  /* display: flex; */
   flex-wrap: wrap;
   gap: 3em;
   margin: 0;
@@ -44,7 +39,7 @@ a::before {
 
 /* .style-01 */
 
-.tpaginator.style-02 {
+.t-paginator-container.style-02 {
   background-color: white;
   justify-self: center;
   padding: 0.5em;
@@ -53,7 +48,7 @@ a::before {
   border-radius: 0.3em;
 }
 
-.tpaginator.style-02 .btn {
+.t-paginator-container.style-02 .btn {
   border-width: 0.1em;
   border-radius: 0.3em;
   background-color: transparent;
@@ -62,23 +57,23 @@ a::before {
   padding: 0.5em;
   min-width: 2em;
 }
-.tpaginator.style-02 .btn:hover {
+.t-paginator-container.style-02 .btn:hover {
   border-color: lightseagreen;
 }
-.tpaginator.style-02 .btn.active {
+.t-paginator-container.style-02 .btn.active {
   background-color: lightseagreen;
   color: white;
 }
-.tpaginator.style-02 :is(.left, .right) .btn {
+.t-paginator-container.style-02 :is(.left, .right) .btn {
   color: lightseagreen;
   font-weight: bold;
 }
-.tpaginator.style-02 :is(.left, .right) .btn:hover {
+.t-paginator-container.style-02 :is(.left, .right) .btn:hover {
   background-color: lightseagreen;
   color: white;
 }
 
-.tpaginator.style-03 {
+.t-paginator-container.style-03 {
   --_gap: 1px;
   --_btn-scale-y: 1;
   --_btn-border-width: 0px;
@@ -88,11 +83,11 @@ a::before {
   background-color: #f23b26;
   justify-self: center;
 }
-.tpaginator.style-03 .btn {
+.t-paginator-container.style-03 .btn {
   color: white;
 }
 
-.tpaginator.style-04 {
+.t-paginator-container.style-04 {
   --_gap: 2em;
   --_btn-scale-y: 1;
   --_btn-border-width: 0px;
@@ -100,16 +95,16 @@ a::before {
   --_btn-background-color-active: #E73A80;
   --_btn-padding: 0.4em 2em;
 }
-.tpaginator.style-04 .btn {
+.t-paginator-container.style-04 .btn {
   color: white;
   border-radius: 10em;
   filter: drop-shadow(0em 0.3em 0.5em hsla(336, 78%, 57%, 0.5));
 }
-.tpaginator.style-04 .btn.active {
+.t-paginator-container.style-04 .btn.active {
   --_btn-padding: 0.4em 3em;
 }
 
-.tpaginator.style-05 {
+.t-paginator-container.style-05 {
   --_gap: 0em;
   --_btn-scale-y: 1;
   --_btn-border-width: 0em 0em 0.3em 0em;
@@ -120,11 +115,11 @@ a::before {
   background-color: white;
   justify-self: center;
 }
-.tpaginator.style-05 .btn:hover {
+.t-paginator-container.style-05 .btn:hover {
   --_btn-background-color: hsla(0, 100%, 50%, 0.25);
 }
 
-.tpaginator.style-06 {
+.t-paginator-container.style-06 {
   --_gap: 1em;
   --_btn-scale-y: 1;
   --_btn-border-width: 0.5em;
@@ -136,16 +131,16 @@ a::before {
   justify-self: center;
   padding: 1em;
 }
-.tpaginator.style-06 .btn {
+.t-paginator-container.style-06 .btn {
   border-radius: 10em;
   width: 5em;
   height: 5em;
 }
-.tpaginator.style-06 .btn:hover {
+.t-paginator-container.style-06 .btn:hover {
   --_btn-border-color: hsla(135, 47%, 54%, 0.5);
 }
 
-.tpaginator.style-07 {
+.t-paginator-container.style-07 {
   --_gap: 0em;
   --_btn-scale-y: 1;
   --_btn-border-width: 0em;
@@ -157,17 +152,17 @@ a::before {
   overflow: hidden;
   justify-self: center;
 }
-.tpaginator.style-07 .btn {
+.t-paginator-container.style-07 .btn {
   color: #718299;
 }
-.tpaginator.style-07 .btn.active {
+.t-paginator-container.style-07 .btn.active {
   color: white;
 }
-.tpaginator.style-07 :is(.left, .right) .btn {
+.t-paginator-container.style-07 :is(.left, .right) .btn {
   --_btn-padding: 1.5em 2.5em;
 }
 
-.tpaginator.style-08 {
+.t-paginator-container.style-08 {
   --_gap: 0em;
   --_btn-scale-y: 1;
   --_btn-border-width: 0em;
@@ -177,21 +172,21 @@ a::before {
   justify-self: center;
   padding: 1em;
 }
-.tpaginator.style-08 .btn {
+.t-paginator-container.style-08 .btn {
   color: #2568F7;
   font-weight: bold;
 }
-.tpaginator.style-08 .btn.prev {
+.t-paginator-container.style-08 .btn.prev {
   border-radius: 0.6em 0em 0em 0.6em;
 }
-.tpaginator.style-08 .btn.next {
+.t-paginator-container.style-08 .btn.next {
   border-radius: 0em 0.6em 0.6em 0em;
 }
-.tpaginator.style-08 .btn:hover {
+.t-paginator-container.style-08 .btn:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.tpaginator.style-09 {
+.t-paginator-container.style-09 {
   --_gap: 0em;
   --_btn-scale-y: 1;
   --_btn-border-width: 1px;
@@ -203,12 +198,12 @@ a::before {
   background-color: white;
   justify-self: center;
 }
-.tpaginator.style-09 .btn.active {
+.t-paginator-container.style-09 .btn.active {
   --_btn-border-color-active: gray;
   background-image: linear-gradient(180deg, rgba(230,230,230,0.2) 0%, rgba(0,0,0,0.2) 100%);
   box-shadow: inset 0 0 3px #111;
 }
-.tpaginator.style-09 .btn:hover {
+.t-paginator-container.style-09 .btn:hover {
   --_btn-border-color: #111111;
   background-image: linear-gradient(180deg, rgba(88,88,88,1) 0%, rgba(17,17,17,1) 100%);
   color: white;

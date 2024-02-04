@@ -483,7 +483,7 @@ var tpaginator=tpaginator||(function () {
       }
 
       if(isAll) {
-        const tpaginatorList_DOM = document.querySelectorAll(".tpaginator");
+        const tpaginatorList_DOM = document.querySelectorAll(".t-paginator-container");
         const tpaginatorList = Array.from(tpaginatorList_DOM);
         tpaginatorList.forEach((item) => {
           item.innerHTML = "";
