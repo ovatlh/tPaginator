@@ -34,12 +34,44 @@ var tpaginator=tpaginator||(function () {
       const btn_Prev_DOM = _PAGINATOR[id].DOM.querySelector("button.btn.prev");
       const btn_Next_DOM = _PAGINATOR[id].DOM.querySelector("button.btn.next");
       const btn_Last_DOM = _PAGINATOR[id].DOM.querySelector("button.btn.last");
+      const btn_left_DOM = _PAGINATOR[id].DOM.querySelector(".left");
+      const btn_right_DOM = _PAGINATOR[id].DOM.querySelector(".right");
       const btn_Page_List_DOM = _PAGINATOR[id].DOM.querySelectorAll("button.btn.page");
+      const btn_Center_DOM = _PAGINATOR[id].DOM.querySelector(".center");
 
       btn_First_DOM.dataset.numPage = _PAGINATOR[id].numPage.FIRST;
       btn_Prev_DOM.dataset.numPage = _PAGINATOR[id].numPage.PREV;
       btn_Next_DOM.dataset.numPage = _PAGINATOR[id].numPage.NEXT;
       btn_Last_DOM.dataset.numPage = _PAGINATOR[id].numPage.LAST;
+
+      btn_First_DOM.classList.remove("hidden");
+      btn_Prev_DOM.classList.remove("hidden");
+      btn_Next_DOM.classList.remove("hidden");
+      btn_Last_DOM.classList.remove("hidden");
+      btn_left_DOM.classList.remove("hidden");
+      btn_right_DOM.classList.remove("hidden");
+      btn_Center_DOM.classList.remove("hidden");
+      if(_PAGINATOR[id].hiddenButtons.FIRST) {
+        btn_First_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.PREV) {
+        btn_Prev_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.NEXT) {
+        btn_Next_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.LAST) {
+        btn_Last_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.CENTER) {
+        btn_Center_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.FIRST && _PAGINATOR[id].hiddenButtons.PREV) {
+        btn_left_DOM.classList.add("hidden");
+      }
+      if(_PAGINATOR[id].hiddenButtons.NEXT && _PAGINATOR[id].hiddenButtons.LAST) {
+        btn_right_DOM.classList.add("hidden");
+      }
 
       btn_First_DOM.title = `${_PAGINATOR[id].numPage.FIRST} / ${_PAGINATOR[id].totalPages}`;
       btn_Prev_DOM.title = `${_PAGINATOR[id].numPage.PREV} / ${_PAGINATOR[id].totalPages}`;
@@ -371,6 +403,103 @@ var tpaginator=tpaginator||(function () {
     }
   }
 
+  function fnSaveInfoUpdate({
+    id = "",
+    totalPages = null,
+    currentPage = null,
+    numPagesToShow = null,
+    contentButtons = {
+      FIRST: null,
+      PREV: null,
+      NEXT: null,
+      LAST: null,
+    },
+    hiddenButtons = {
+      FIRST: null,
+      PREV: null,
+      NEXT: null,
+      LAST: null,
+      CENTER: null,
+    },
+    fnOnClick = null,
+  } = {}) {
+    try {
+      if(_show_Debug_Message) {
+        console.log(`${id}                                     `);
+        console.log(`tpaginator: [start] fnSaveInfoUpdate - ${id}`);
+      }
+
+      if(id.length > 0) {
+        if(totalPages && totalPages != null && totalPages != undefined) {
+          _PAGINATOR[id].totalPages = totalPages;
+          if(totalPages < _PAGINATOR[id].numPagesToShow) {
+            _PAGINATOR[id].numPagesToShow = totalPages;
+          }
+          if(totalPages < _PAGINATOR[id].currentPage) {
+            _PAGINATOR[id].currentPage = totalPages;
+            fnSetNewPage({ id: id, numPage: _PAGINATOR[id].currentPage });
+          }
+        }
+
+        if(currentPage && currentPage != null && currentPage != undefined) {
+          _PAGINATOR[id].currentPage = currentPage;
+          fnSetNewPage({ id: id, numPage: _PAGINATOR[id].currentPage });
+        }
+
+        if(numPagesToShow && numPagesToShow != null && numPagesToShow != undefined) {
+          _PAGINATOR[id].numPagesToShow = numPagesToShow;
+        }
+
+        if(contentButtons && contentButtons != null && contentButtons != undefined) {
+          if(contentButtons.FIRST && contentButtons.FIRST != null && contentButtons.FIRST != undefined) {
+            _PAGINATOR[id].contentButtons.FIRST = contentButtons.FIRST;
+          }
+          if(contentButtons.PREV && contentButtons.PREV != null && contentButtons.PREV != undefined) {
+            _PAGINATOR[id].contentButtons.PREV = contentButtons.PREV;
+          }
+          if(contentButtons.NEXT && contentButtons.NEXT != null && contentButtons.NEXT != undefined) {
+            _PAGINATOR[id].contentButtons.NEXT = contentButtons.NEXT;
+          }
+          if(contentButtons.LAST && contentButtons.LAST != null && contentButtons.LAST != undefined) {
+            _PAGINATOR[id].contentButtons.LAST = contentButtons.LAST;
+          }
+        }
+
+        if(hiddenButtons && hiddenButtons != null && hiddenButtons != undefined) {
+          if(hiddenButtons.FIRST != null && hiddenButtons.FIRST != undefined) {
+            _PAGINATOR[id].hiddenButtons.FIRST = hiddenButtons.FIRST;
+          }
+          if(hiddenButtons.PREV != null && hiddenButtons.PREV != undefined) {
+            _PAGINATOR[id].hiddenButtons.PREV = hiddenButtons.PREV;
+          }
+          if(hiddenButtons.NEXT != null && hiddenButtons.NEXT != undefined) {
+            _PAGINATOR[id].hiddenButtons.NEXT = hiddenButtons.NEXT;
+          }
+          if(hiddenButtons.LAST != null && hiddenButtons.LAST != undefined) {
+            _PAGINATOR[id].hiddenButtons.LAST = hiddenButtons.LAST;
+          }
+          if(hiddenButtons.CENTER != null && hiddenButtons.CENTER != undefined) {
+            _PAGINATOR[id].hiddenButtons.CENTER = hiddenButtons.CENTER;
+          }
+        }
+
+        if(fnOnClick && fnOnClick != null && fnOnClick != undefined) {
+          _PAGINATOR[id].fnOnClick = fnOnClick;
+        }
+      }
+
+      if(_show_Debug_Message) {
+        console.log(`${id}                                     `);
+        console.log(`tpaginator: [ end ] fnSaveInfoUpdate - ${id}`);
+      }
+    } catch (error) {
+      if(_show_Error_Message) {
+        console.error(`tpaginator: fnSaveInfoUpdate - ${id}`);
+        console.error(error);
+      }
+    }
+  }
+
   function fnSaveInfoInit({
     id = "tpaginator-id",
     totalPages = 1,
@@ -413,6 +542,67 @@ var tpaginator=tpaginator||(function () {
     } catch (error) {
       if(_show_Error_Message) {
         console.error(`tpaginator: fnSaveInfoInit - ${id}`);
+        console.error(error);
+      }
+    }
+  }
+
+  function fnUpdate({
+    id = "",
+    totalPages = null,
+    currentPage = null,
+    numPagesToShow = null,
+    contentButtons = {
+      FIRST: null,
+      PREV: null,
+      NEXT: null,
+      LAST: null,
+    },
+    hiddenButtons = {
+      FIRST: null,
+      PREV: null,
+      NEXT: null,
+      LAST: null,
+      CENTER: null,
+    },
+    fnOnClick = null,
+  } = {}) {
+    try {
+      if(_show_Debug_Message) {
+        console.log(`${id}                                     `);
+        console.log(`tpaginator: [start] fnUpdate - ${id}`);
+      }
+
+      if(id.length <= 0) {
+        console.error(`tpaginator: fnUpdate - ID required: ${id}`);
+        return;
+      }
+
+      fnSaveInfoUpdate({
+        id: id,
+        totalPages: totalPages,
+        currentPage: currentPage,
+        numPagesToShow: numPagesToShow,
+        contentButtons: contentButtons,
+        hiddenButtons: hiddenButtons,
+        fnOnClick: fnOnClick,
+      });
+
+      fnCalcExtraConfig({ id: id });
+
+      fnSetDOM({ id: id });
+
+      fnEventsDOM({ id: id });
+
+      fnRefreshDOM({ id: id });
+
+      if(_show_Debug_Message) {
+        console.log(`${id}                                     `);
+        console.log(`tpaginator: [ end ] fnUpdate - ${id}`);
+      }
+    } catch (error) {
+      if(_show_Error_Message) {
+        console.error(`tpaginator: fnUpdate - ${id}`);
         console.error(error);
       }
     }
@@ -536,5 +726,6 @@ var tpaginator=tpaginator||(function () {
     fnClear,
     fnInit,
     fnSetNewPage,
+    fnUpdate,
   }
 })();
